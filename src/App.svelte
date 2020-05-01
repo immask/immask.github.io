@@ -4,20 +4,64 @@
 		<div class="header"><a href="/"><h1>Immask</h1></a></div>
 		<div class="navbar">
 			<div class="navbar-link"><a href="/about">About</a></div>
-			<div class="navbar-link"><a href="/start">Get Started</a></div>
-			<div class="navbar-link"><a href="/about">Contact</a></div>
+			<div class="navbar-link"><a href="#start">Get Started</a></div>
+			<div class="navbar-link"><a href="#contact">Contact</a></div>
 			<div class="navbar-link"><a href="https://github.com/immask">Github</a></div>
 		</div>
 	</div>
 	<div class="content">
 		<section id="intro">
 			<div>
-				<h1>Create Your Own<br>Personal-Fitting Mask</h1>
+				<h1>Your face is unique.<br>Your mask should be too.</h1>
 				<p>Our web application uses facial dimension inputs to help you generate a mask that fits your face.</p>
 				<div><button>Learn More</button><button>Get Started</button></div>
 			</div>
 			<div>Insert Image Here</div>
 		</section>
+		<section id="information">
+			<div>
+				<h3>How does this work?</h3>
+				<h1>The Process</h1>
+			</div>
+			<div>
+				<div>
+					<div>
+						<h1>1</h1>
+						<img>
+					</div>
+					<div>
+						<h1>Take Measurements</h1>
+						<p></p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<h1>2</h1>
+						<img>
+					</div>
+					<div>
+						<h1>Print Your Design</h1>
+						<p></p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<h1>1</h1>
+						<img>
+					</div>
+					<div>
+						<h1>Sew your Design</h1>
+						<p></p>
+					</div>
+				</div>				
+			</div>
+			<div>Insert Image Here</div>
+		</section>
+		<section id="about"></section>
+		<section id="start"></section>
+		<section id="gallery"></section>
+		<section id="questions"></section>
+		<section id="contact"></section>
 	</div>
 	<div class="footing">
 	</div>
@@ -46,6 +90,7 @@
 		display: flex;
 		flex-direction: row;
 		z-index: 2;
+		justify-content: space-between;
 	}
 
 	.header {
@@ -99,18 +144,21 @@
 		top: 0;
 	}
 
+	.content section {
+		max-width: 1200px;
+    margin: auto;
+	}
+
 	.content section#intro {
 		display: grid;
   	grid-template-columns: 1fr 1fr;
 		grid-column-gap: 2em;
-		max-width: 1200px;
-		margin: auto;
 		height: 100vh;
 	}
 
 	.content section#intro h1 {
-		color: rgb(242, 107, 109);
-		font-size: 2em;
+		font-size: 3em;
+		margin: 0;
 	}
 
 	.content section#intro p  {
@@ -122,6 +170,7 @@
 		border: none;
 		color: white;
 		padding: 1em 2em;
+		margin: auto;
 		margin-right: 1em;
 		cursor: pointer;
 	}
