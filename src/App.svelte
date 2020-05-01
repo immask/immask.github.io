@@ -1,9 +1,15 @@
+<script>
+	function scrollTo(section) {
+		const elm = document.getElementById(section);
+		elm.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+	}
+</script>
 
 <main>
 	<div class="heading">
 		<div class="header"><a href="/"><h1>Immask</h1></a></div>
 		<div class="navbar">
-			<div class="navbar-link"><a href="/about">About</a></div>
+			<div class="navbar-link"><a href="#about">About</a></div>
 			<div class="navbar-link"><a href="#start">Get Started</a></div>
 			<div class="navbar-link"><a href="#contact">Contact</a></div>
 			<div class="navbar-link"><a href="https://github.com/immask">Github</a></div>
@@ -17,13 +23,14 @@
 				<div><button>Learn More</button><button>Get Started</button></div>
 			</div>
 			<div>Insert Image Here</div>
+			<div id="down-indicator" on:click={() => scrollTo("information")}>↓</div>
 		</section>
 		<section id="information">
-			<div>
-				<h3>How does this work?</h3>
-				<h1>The Process</h1>
+			<div class="section-heading">
+				<p class="subtitle">How does this work?</p>
+				<h2 class="title">The Process</h2>
 			</div>
-			<div>
+			<div class="section-content">
 				<div>
 					<div>
 						<h1>1</h1>
@@ -57,11 +64,74 @@
 			</div>
 			<div>Insert Image Here</div>
 		</section>
-		<section id="about"></section>
-		<section id="start"></section>
-		<section id="gallery"></section>
-		<section id="questions"></section>
-		<section id="contact"></section>
+		<section id="about">
+			<div class="section-heading">
+				<p class="subtitle">How are we? What are our goals?</p>
+				<h2 class="title">About Us</h2>
+			</div>
+			<div>
+					<h3>We are students and...</h3>
+					<p>Something</p>
+				</div>
+				<div>
+					<h3>Insert Image Here</h3>
+				</div>
+		</section>
+		<section id="start">
+			<div class="section-heading">
+				<p class="subtitle">We offer two methods for measurement input</p>
+				<h2 class="title">Get Started</h2>
+			</div>
+			<div class="section-content">
+				<div>
+					<h1>Upload an Image</h1>
+					<p>This process will take one to three minutes.</p>
+					<button>Continue</button>
+				</div>
+				<div>
+					<h1>Take Measurements</h1>
+					<p>This process will take five to ten minutes.</p>
+					<button>Continue</button>
+				</div>
+			</div>
+		</section>
+		<section id="gallery">
+			<div class="section-heading">
+				<p class="subtitle">Explore our creations</p>
+				<h2 class="title">Mask Gallery</h2>
+			</div>
+		</section>
+		<section id="questions">
+			<div class="section-heading">
+				<p class="subtitle">Still have questions?</p>
+				<h2 class="title">FAQs</h2>
+			</div>
+			<div class="section-content">
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>			
+			</div>
+		</section>
+		<section id="contact">
+			<div class="section-heading">
+				<p class="subtitle">Questions? Comments? Concerns?</p>
+				<h2 class="title">Contact Us</h2>
+			</div>
+			<div><form></form></div>
+		</section>
 	</div>
 	<div class="footing">
 	</div>
@@ -75,10 +145,16 @@
 		to { opacity: 1; }
 	}
 
+	@keyframes bobble {
+  	from { transform: translateY(0); }
+  	to { transform: translateY(-1em); }
+	}
+
 	main {
 		min-height: 100vh;
 		margin: 0 auto;
 		font-family: 'Inter', sans-serif;
+		font-size: 18px;
 		animation: fadeIn .2s ease-in-out;
 	}
 
@@ -146,7 +222,12 @@
 
 	.content section {
 		max-width: 1200px;
-    margin: auto;
+		min-height: 70vh;
+		margin: auto;
+	}
+
+	.content section:not(:first-child) {
+		padding: 2.5vh 0;
 	}
 
 	.content section#intro {
@@ -154,10 +235,11 @@
   	grid-template-columns: 1fr 1fr;
 		grid-column-gap: 2em;
 		height: 100vh;
+		position: relative;
 	}
 
 	.content section#intro h1 {
-		font-size: 3em;
+		font-size: 2.5em;
 		margin: 0;
 	}
 
@@ -181,11 +263,40 @@
 		justify-content: center;
 	}
 
+	.content section#intro #down-indicator {
+		position: absolute;
+    bottom: 1em;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 1.5em;
+		animation: bobble 1s infinite alternate;
+		cursor: pointer;
+	}
+
 	.content section#intro button:nth-of-type(1) {
 		background-color: rgb(242, 107, 109);
 	}
 
 	.content section#intro button:nth-of-type(2) {
 		background-color: rgb(90, 96, 152);
+	}
+
+	.content section .section-heading {
+		text-align: center;
+		font-size: 1.5em;
+	}
+
+	.content section .subtitle {
+		color: rgb(185, 185, 185);
+		margin-bottom: 0;
+	}
+
+	.content section .title {
+		margin-top: 0.1em;
+	}
+
+	.content section#information .section-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 </style>
