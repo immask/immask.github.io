@@ -1,6 +1,6 @@
 <main>
 	<div class="heading">
-		<div class="header"><a href="/"><img src="/assets/immask.svg"></a></div>
+		<div class="header"><a href="/"><img src="/assets/immask.svg" alt="immask"></a></div>
 		<div class="navbar">
 			<div class="navbar-link"><a href="#intro">How It Works</a></div>
 			<div class="navbar-link"><a href="#about">About Us</a></div>
@@ -97,50 +97,81 @@
 					<h1>Upload an Image</h1>
 					<p>This process will take one to three minutes. You will need a ruler,
 						and a high resolution photo of the person to generate the mask for. </p>
-					<button>Continue →</button>
+					<button><a href="/">Continue →</a></button>
 				</div>
 				<div>
 					<img src="/assets/measure.svg" alt="take measurements">
 					<h1>Take Measurements</h1>
 					<p>This process will take five to ten minutes. You will need a ruler. </p>
-					<button>Continue →</button>
+					<button><a href="/">Continue →</a></button>
 				</div>
 			</div>
 		</section>
 		<section id="questions">
 			<div class="section-heading">
 				<p class="subtitle">Still have questions?</p>
-				<h2 class="title">FAQs</h2>
+				<h2 class="title">Frequently Asked</h2>
 			</div>
 			<div class="section-content">
 				<details>
 					<summary>How effective are sewn masks?</summary>
-					<p>Answer</p>
+					<p>The effectiveness of sewn masks is significantly less than off-the shelf surgical 
+					masks and N95 masks, but the CDC recommends the use of simple face coverings to help 
+					slow the spread of the virus in order to reserve critical health supplies for medical 
+					professionals.</p>
+					<p>There are two main things that determine the effectiveness of a mask: material 
+					filtering efficiency and fit. Our project aims to help improve the fit (particularly 
+					the seal) of the mask on the face. According to the linked study, sewn 
+					masks typically have around ⅔ of the filtration efficiency of a surgical mask and ½ 
+					of the fit factor.</p> 
+					<p>We cannot guarantee a number because the user may not user 
+					recommended materials, and inaccuracies in sewing may result in a less than idea seal, 
+					but there are several benefits to using a sewn mask.</p>
 				</details>
 				<details>
 					<summary>Why should I sew my own mask?</summary>
-					<p>Answer</p>
+					<ol>
+						<li>Creating your own mask decreases demand on the limited industrially manufactured 
+						supply</li>
+						<li>Being custom fit, these cloth masks rest closer to the face than off-the shelf 
+						surgical masks.</li>
+						<li>While the filtering efficiency is less than off-the shelf masks, DIY masks are 
+						better than no protection at all.</li>
+					</ol>
 				</details>
 				<details>
 					<summary>Do I need a printer?</summary>
-					<p>Answer</p>
+					<p>While we recommend the user to print, pin, and trace our design for better accuracy, 
+					we have implemented a function to help users scale the on-screen design.</p>
 				</details>
 				<details>
 					<summary>What are some recommended materials?</summary>
-					<p>Answer</p>
+					<p>We recommend using preshrunk cotton fabric with an activated carbon insert. The 
+					cotton provides good breathability and stretches to create a better fit when compared 
+					to thicker household materials (like tea towels). Activated carbon, being an adsorbent 
+					material, can remove odor and a wide range of gaseous pollutants from the air.</p>
 				</details>	
 				<details>
 					<summary>How often should I wash my DIY mask?</summary>
-					<p>Answer</p>
+					<p>Masks should be washed after every use.</p>
 				</details>	
 				<details>
 					<summary>Is there a preset template that I can use?</summary>
-					<p>Answer</p>
+					<p>Yes, the default settings are taken from a headform of an “average” person, but note 
+					that since seal is particularly sensitive to facial dimensions, this mask might not fit 
+					the person that you are designing for.</p>
 				</details>			
 			</div>
 		</section>
 	</div>
 	<div class="footing">
+		<div class="footing-heading">
+			<h1>Contact Us</h1>
+			<p>Email us at <a href="mailto:immaskcontact@gmail.com">immaskcontact@gmail.com</a>!</p>
+		</div>
+		<div class="footing-content">
+			<a href="#splash"><img src="/assets/immask.svg" alt="immask"></a>
+		</div>
 	</div>
 </main>
 
@@ -231,11 +262,30 @@
 	.content section {
 		max-width: 1200px;
 		min-height: 80vh;
-		margin: auto;
+		margin: 0 auto;
+		padding: 5vh 0;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+  	justify-content: center;
 	}
 
-	.content section:not(:first-child) {
-		padding: 2.5vh 0;
+	.content section .section-content {
+		width: 100%;
+	}
+
+	.content section .section-content button {
+		border-radius: 2em;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.content section .section-content button a {
+		display: block;
+		padding: 1em 2em;
+		border-radius: 2em;
 	}
 
 	.content section#splash {
@@ -261,12 +311,8 @@
 	}
 
 	.content section#splash button {
-		border-radius: 2em;
-		border: none;
-		padding: 1em 2em;
-		margin: auto;
+		margin-top: 0.5em;
 		margin-right: 1em;
-		cursor: pointer;
 	}
 
 	.content section#splash button a {
@@ -301,7 +347,7 @@
 
 	.content section .subtitle {
 		color: rgb(185, 185, 185);
-		margin-bottom: 0;
+		margin: 0;
 	}
 
 	.content section .title {
@@ -353,11 +399,11 @@
 	}
 
 	.content section#start .section-content > div {
-		padding: 10vh 5vw;
+		padding: 2em;
 		display: flex;
 		flex-direction: column;
-		border: 5px solid rgba(var(--color-purple), 0.3);
-		border-radius: 5px;
+		background: rgba(var(--color-purple), 0.2);
+		border-radius: 1em;
 	}
 
 	.content section#start .section-content button {
@@ -365,11 +411,7 @@
 		color: white;
 		float: right;
 		align-self: flex-end;
-		border-radius: 2em;
-		border: none;
-		padding: 1em 2em;
 		margin-top: auto;
-		cursor: pointer;
 	}
 
 	.content section#start .section-content button a {
@@ -382,12 +424,21 @@
 		padding: 1em;
 	}
 
-	.content section#questions summary {
-		outline: none;
-		cursor: pointer;
+	.content section#questions details:last-of-type {
+		border-bottom: 2px solid black;
 	}
 
-	.content section#questions summary::-webkit-details-marker {
+	.content section#questions details summary {
+		outline: none;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.content section#questions details[open] summary {
+		font-weight: bold;
+	}
+
+	.content section#questions details summary::-webkit-details-marker {
   	display: none;
 	}
 
@@ -406,7 +457,26 @@
 
 
 	.footing {
-		background-color: rgb(90, 96, 152);
+		background-color: rgba(var(--color-purple), 0.2);
+		padding: 5vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
+	.footing .footing-heading {
+		text-align: center;
+		margin-bottom: 2em;
+	}
+
+	.footing .footing-heading a {
+		color: inherit;
+		border-bottom: 2px solid black;
+		text-decoration: none;
+	}
+
+	.footing .footing-content img {
+		height: 2em;
+	}
 </style>
