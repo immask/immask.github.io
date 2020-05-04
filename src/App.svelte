@@ -1,11 +1,10 @@
 <main>
 	<div class="heading">
-		<div class="header"><a href="/"><h1>Immask</h1></a></div>
+		<div class="header"><a href="/"><img src="/assets/immask.svg"></a></div>
 		<div class="navbar">
 			<div class="navbar-link"><a href="#intro">How It Works</a></div>
 			<div class="navbar-link"><a href="#about">About Us</a></div>
 			<div class="navbar-link"><a href="#start">Get Started</a></div>
-			<div class="navbar-link"><a href="#contact">Contact</a></div>
 			<div class="navbar-link"><a href="https://github.com/immask">Github</a></div>
 		</div>
 	</div>
@@ -18,12 +17,12 @@
 						<p>Our web application uses facial dimension inputs to help you generate a mask that fits your face.</p>
 					</div>
 					<div>
-						<button>Learn More</button>
-						<button>Get Started</button>
+						<button><a href="#intro">Learn More</a></button>
+						<button><a href="#start">Get Started</a></button>
 					</div>			
 				</div>
 				<div>
-					<div>Insert Image Here</div>
+					<img src="/assets/splash.svg">
 				</div>
 			</div>
 		</section>
@@ -40,7 +39,7 @@
 					</div>
 					<div>
 						<h1>Take Measurements</h1>
-						<p></p>
+						<p>Input dimensions into our application. You will need a ruler. Optionally, you can upload an image instead.</p>
 					</div>
 				</div>
 				<div>
@@ -50,7 +49,7 @@
 					</div>
 					<div>
 						<h1>Print Your Design</h1>
-						<p></p>
+						<p>Print your design to scale. We will output a vector image so that you can laser cut the design.</p>
 					</div>
 				</div>
 				<div>
@@ -60,11 +59,10 @@
 					</div>
 					<div>
 						<h1>Sew your Design</h1>
-						<p></p>
+						<p>Use our easy-to-follow template to create your personal mask!</p>
 					</div>
 				</div>				
 			</div>
-			<div>Insert Image Here</div>
 		</section>
 		<section id="about">
 			<div class="section-heading">
@@ -95,21 +93,18 @@
 			</div>
 			<div class="section-content">
 				<div>
+					<img src="/assets/image.svg" alt="upload an image">
 					<h1>Upload an Image</h1>
-					<p>This process will take one to three minutes.</p>
-					<button>Continue</button>
+					<p>This process will take one to three minutes. You will need a ruler,
+						and a high resolution photo of the person to generate the mask for. </p>
+					<button>Continue →</button>
 				</div>
 				<div>
+					<img src="/assets/measure.svg" alt="take measurements">
 					<h1>Take Measurements</h1>
-					<p>This process will take five to ten minutes.</p>
-					<button>Continue</button>
+					<p>This process will take five to ten minutes. You will need a ruler. </p>
+					<button>Continue →</button>
 				</div>
-			</div>
-		</section>
-		<section id="gallery">
-			<div class="section-heading">
-				<p class="subtitle">Explore our creations</p>
-				<h2 class="title">Mask Gallery</h2>
 			</div>
 		</section>
 		<section id="questions">
@@ -119,29 +114,30 @@
 			</div>
 			<div class="section-content">
 				<details>
-					<summary>Question</summary>
+					<summary>How effective are sewn masks?</summary>
 					<p>Answer</p>
 				</details>
 				<details>
-					<summary>Question</summary>
+					<summary>Why should I sew my own mask?</summary>
 					<p>Answer</p>
 				</details>
 				<details>
-					<summary>Question</summary>
+					<summary>Do I need a printer?</summary>
 					<p>Answer</p>
 				</details>
 				<details>
-					<summary>Question</summary>
+					<summary>What are some recommended materials?</summary>
+					<p>Answer</p>
+				</details>	
+				<details>
+					<summary>How often should I wash my DIY mask?</summary>
+					<p>Answer</p>
+				</details>	
+				<details>
+					<summary>Is there a preset template that I can use?</summary>
 					<p>Answer</p>
 				</details>			
 			</div>
-		</section>
-		<section id="contact">
-			<div class="section-heading">
-				<p class="subtitle">Questions? Comments? Concerns?</p>
-				<h2 class="title">Contact Us</h2>
-			</div>
-			<div><form></form></div>
 		</section>
 	</div>
 	<div class="footing">
@@ -198,9 +194,8 @@
 		color: inherit;
 	}
 
-	.header h1 {
-		margin: 0;
-		font-weight: 700;
+	.header img {
+		height: 2em;
 	}
 	
 	.navbar {
@@ -224,8 +219,8 @@
 	}
 
 	.navbar .navbar-link a:hover {
-		border-bottom: 3px solid rgb(90, 96, 152);
-		color: rgb(90, 96, 152);
+		border-bottom: 3px solid rgb(var(--color-pink));
+		color: rgb(var(--color-pink));
 	}
 
 	.content {
@@ -268,11 +263,15 @@
 	.content section#splash button {
 		border-radius: 2em;
 		border: none;
-		color: white;
 		padding: 1em 2em;
 		margin: auto;
 		margin-right: 1em;
 		cursor: pointer;
+	}
+
+	.content section#splash button a {
+		text-decoration: none;
+		color: inherit;
 	}
 
 	.content section#splash .section-content > div {
@@ -282,11 +281,17 @@
 	}
 
 	.content section#splash button:nth-of-type(1) {
-		background-color: rgb(242, 107, 109);
+		background-color: rgb(var(--color-pink));
+		color: white;
 	}
 
 	.content section#splash button:nth-of-type(2) {
-		background-color: rgb(90, 96, 152);
+		background-color: rgb(var(--color-green));
+		color: black;
+	}
+
+	.content section#splash .section-content img {
+		height: 80%;
 	}
 
 	.content section .section-heading {
@@ -306,6 +311,15 @@
 	.content section#intro .section-content {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: 2em;
+	}
+
+	.content section#intro .section-content p {
+		color: rgb(185, 185, 185);
+	}
+
+	.content section#intro .title {
+		color: rgb(var(--color-pink));
 	}
 
 	.content section#intro .card-image h1 {
@@ -314,14 +328,53 @@
 		color: rgba(0, 0, 0, 0.4);
 	}
 
+	.content section#intro .section-content > div:nth-of-type(1) .card-image h1 {
+		color: rgba(var(--color-purple), 0.5);
+	}
+
+	.content section#intro .section-content > div:nth-of-type(2) .card-image h1 {
+		color: rgba(var(--color-pink), 0.5);
+	}
+
+	.content section#intro .section-content > div:nth-of-type(3) .card-image h1 {
+		color: rgba(var(--color-green), 0.5);
+	}
+
 	.content section#about .section-content {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 2em;
 	}
 
 	.content section#start .section-content {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 2em;
+	}
+
+	.content section#start .section-content > div {
+		padding: 10vh 5vw;
+		display: flex;
+		flex-direction: column;
+		border: 5px solid rgba(var(--color-purple), 0.3);
+		border-radius: 5px;
+	}
+
+	.content section#start .section-content button {
+		background-color: rgb(var(--color-purple));
+		color: white;
+		float: right;
+		align-self: flex-end;
+		border-radius: 2em;
+		border: none;
+		padding: 1em 2em;
+		margin-top: auto;
+		cursor: pointer;
+	}
+
+	.content section#start .section-content button a {
+		text-decoration: none;
+		color: inherit;
 	}
 
 	.content section#questions details {
@@ -341,13 +394,16 @@
 	.content section#questions details summary::after {
 		content: "⌃";
 		transform: rotate(180deg);
+		transition: transform .1s ease-in-out;
 		float: right;
+		font-weight: 700;
 	}
 
 	.content section#questions details[open] summary::after {
 		content: "⌃";
 		transform: rotate(000deg);
 	}
+
 
 	.footing {
 		background-color: rgb(90, 96, 152);
