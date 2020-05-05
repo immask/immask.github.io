@@ -4,10 +4,10 @@
 set -e
 
 # build
-npm run build
+npm run export
 
 # navigate into the build output directory
-cd public
+cd __sapper__/export
 
 git init
 git add -A

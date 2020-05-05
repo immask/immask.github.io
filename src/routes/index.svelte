@@ -11,20 +11,20 @@
 	<div class="content">
 		<section id="splash">
 			<div class="section-content">
+			<div>
 				<div>
-					<div>
-						<h1>Your face is unique.<br>Your mask should be too.</h1>
-						<p>Our web application uses facial dimension inputs to help you generate a mask that fits your face.</p>
-					</div>
-					<div>
-						<button><a href="#intro">Learn More</a></button>
-						<button><a href="#start">Get Started</a></button>
-					</div>			
+					<h1>Your face is unique.<br>Your mask should be too.</h1>
+					<p>Our web application uses facial dimension inputs to help you generate a mask that fits your face.</p>
 				</div>
 				<div>
-					<img src="/assets/splash.svg" alt="splash image">
-				</div>
+					<button><a href="#intro">Learn More</a></button>
+					<button><a href="#start">Get Started</a></button>
+				</div>			
 			</div>
+			<div>
+				<img src="/assets/splash.svg" alt="splash image">
+			</div>
+		</div>
 		</section>
 		<section id="intro">
 			<div class="section-heading">
@@ -175,6 +175,10 @@
 	</div>
 </main>
 
+<script>
+import Section from '../components/Section.svelte';
+</script>
+
 <style>
 	@import url('https://rsms.me/inter/inter.css');
 
@@ -297,7 +301,7 @@
 
 	.content section#splash .section-content {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));;
+		grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));;
 		grid-template-rows: 1fr;
 		grid-column-gap: 2em;
 		height: 100%;
@@ -361,7 +365,7 @@
 
 	.content section#intro .section-content {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));;
 		grid-column-gap: 2em;
 		text-align: center;
 	}
