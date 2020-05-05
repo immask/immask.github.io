@@ -22,7 +22,7 @@
 					</div>			
 				</div>
 				<div>
-					<img src="/assets/splash.svg">
+					<img src="/assets/splash.svg" alt="splash image">
 				</div>
 			</div>
 		</section>
@@ -35,27 +35,27 @@
 				<div>
 					<div class="card-image">
 						<h1>1</h1>
-						<img>
+						<p>📐</p>
 					</div>
 					<div>
 						<h1>Take Measurements</h1>
-						<p>Input dimensions into our application. You will need a ruler. Optionally, you can upload an image instead.</p>
+						<p>Input dimensions into our application.<br>You will need a ruler. Optionally, you can upload an image instead.</p>
 					</div>
 				</div>
 				<div>
 					<div class="card-image">
 						<h1>2</h1>
-						<img>
+						<p>🖨️</p>
 					</div>
 					<div>
 						<h1>Print Your Design</h1>
-						<p>Print your design to scale. We will output a vector image so that you can laser cut the design.</p>
+						<p>Print your design to scale.<br>We will output a vector image so that you can laser cut the design.</p>
 					</div>
 				</div>
 				<div>
 					<div class="card-image">
 						<h1>3</h1>
-						<img>
+						<p>🧵</p>
 					</div>
 					<div>
 						<h1>Sew your Design</h1>
@@ -167,7 +167,7 @@
 	<div class="footing">
 		<div class="footing-heading">
 			<h1>Contact Us</h1>
-			<p>Email us at <a href="mailto:immaskcontact@gmail.com">immaskcontact@gmail.com</a>!</p>
+			<p>Email us at <a href="mailto:immaskcontact@gmail.com">immaskcontact@gmail.com</a>.</p>
 		</div>
 		<div class="footing-content">
 			<a href="#splash"><img src="/assets/immask.svg" alt="immask"></a>
@@ -202,12 +202,13 @@
 		left: 0;
 		width: 100vw;
 		max-width: 1200px;
+		box-sizing: border-box;
 		padding: 2em 1em;
 		margin: auto;
 		display: flex;
 		flex-direction: row;
-		z-index: 2;
 		justify-content: space-between;
+		z-index: 1;
 	}
 
 	.header {
@@ -257,6 +258,8 @@
 	.content {
 		width: 100%;
 		margin: auto;
+		padding: 1em;
+		box-sizing: border-box;
 	}
 
 	.content section {
@@ -290,18 +293,18 @@
 
 	.content section#splash {
 		position: relative;
-		height: 100vh;
 	}
 
 	.content section#splash .section-content {
 		display: grid;
-  	grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));;
+		grid-template-rows: 1fr;
 		grid-column-gap: 2em;
-		height: 100vh;
+		height: 100%;
 	}
 
 	.content section#splash h1 {
-		font-size: 2.5em;
+		font-size: 2.2em;
 		margin: 0;
 	}
 
@@ -324,6 +327,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		max-width: 70vh;
+		height: 90vh;
 	}
 
 	.content section#splash button:nth-of-type(1) {
@@ -337,7 +342,7 @@
 	}
 
 	.content section#splash .section-content img {
-		height: 80%;
+		height: 80vh;
 	}
 
 	.content section .section-heading {
@@ -356,8 +361,9 @@
 
 	.content section#intro .section-content {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));;
 		grid-column-gap: 2em;
+		text-align: center;
 	}
 
 	.content section#intro .section-content p {
@@ -368,28 +374,66 @@
 		color: rgb(var(--color-pink));
 	}
 
+	.content section#intro .card-image {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 16em;
+	}
+
 	.content section#intro .card-image h1 {
-		font-size: 10em;
+		font-size: 16em;
+		line-height: 1em;
 		margin: 0;
 		color: rgba(0, 0, 0, 0.4);
+		position: absolute;
+		left: 0;
+	}
+
+	.content section#intro .card-image p  {
+		font-size: 8em;
+		margin: 0;
+		height: 1.3em;
+		width: 1.3em;
+		border-radius: 10px;
 	}
 
 	.content section#intro .section-content > div:nth-of-type(1) .card-image h1 {
 		color: rgba(var(--color-purple), 0.5);
 	}
 
+	.content section#intro .section-content > div:nth-of-type(1) .card-image p  {
+		background-color: rgba(var(--color-purple), 0.5);
+	}
+
 	.content section#intro .section-content > div:nth-of-type(2) .card-image h1 {
 		color: rgba(var(--color-pink), 0.5);
 	}
 
+	.content section#intro .section-content > div:nth-of-type(2) .card-image p  {
+		background-color: rgba(var(--color-pink), 0.5);
+	}
+
 	.content section#intro .section-content > div:nth-of-type(3) .card-image h1 {
-		color: rgba(var(--color-green), 0.5);
+		color: rgba(var(--color-green), 0.90);
+	}
+
+	.content section#intro .section-content > div:nth-of-type(3) .card-image p  {
+		background-color: rgba(var(--color-green), 0.50);
+	}
+
+	.content section#about .title {
 	}
 
 	.content section#about .section-content {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 2em;
+	}
+
+	.content section#start .title {
+		color: rgb(var(--color-purple));
 	}
 
 	.content section#start .section-content {
@@ -404,6 +448,15 @@
 		flex-direction: column;
 		background: rgba(var(--color-purple), 0.2);
 		border-radius: 1em;
+	}
+
+	.content section#start .section-content img {
+		width: 80%;
+		margin: auto;
+	}
+
+	.content section#start .section-content h1 {
+		margin-bottom: 0;
 	}
 
 	.content section#start .section-content button {
