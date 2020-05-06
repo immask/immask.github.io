@@ -1,5 +1,6 @@
 <script>
 import Heading from "../components/Heading.svelte"
+import Footing from "../components/Footing.svelte"
 </script>
 <main>
 	<Heading/>
@@ -62,7 +63,7 @@ import Heading from "../components/Heading.svelte"
 		</section>
 		<section id="about">
 			<div class="section-heading">
-				<p class="subtitle">How are we? What are our goals?</p>
+				<p class="subtitle">Who are we?</p>
 				<h2 class="title">About Us</h2>
 			</div>
 			<div class="section-content">
@@ -160,15 +161,7 @@ import Heading from "../components/Heading.svelte"
 			</div>
 		</section>
 	</div>
-	<div class="footing">
-		<div class="footing-heading">
-			<h1>Contact Us</h1>
-			<p>Email us at <a href="mailto:immaskcontact@gmail.com">immaskcontact@gmail.com</a>.</p>
-		</div>
-		<div class="footing-content">
-			<a href="#splash"><img src="/assets/immask.svg" alt="immask"></a>
-		</div>
-	</div>
+	<Footing/>
 </main>
 
 <style>
@@ -214,7 +207,6 @@ import Heading from "../components/Heading.svelte"
 	.content section .section-content {
 		width: 100%;
 		box-sizing: border-box;
-		padding: 1em;
 	}
 
 	.content section .section-content button {
@@ -237,7 +229,7 @@ import Heading from "../components/Heading.svelte"
 
 	.content section#splash .section-content {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));;
+		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 2em;
 		height: 100%;
 	}
@@ -283,6 +275,7 @@ import Heading from "../components/Heading.svelte"
 
 	.content section#splash .section-content img {
 		height: 80vh;
+		max-width: 100vw;
 	}
 
 
@@ -292,10 +285,10 @@ import Heading from "../components/Heading.svelte"
 		}
 		.content section#splash .section-content {
 			position: relative;
+			grid-template-columns: 1fr;
 		}
 		.content section#splash .section-content > div {
-			padding: 1em;
-			box-sizing: border-box;
+			padding: 1em 0;
 		}
 		.content section#splash .section-content > div:nth-of-type(1) {
 			width: 90vw;
@@ -399,6 +392,7 @@ import Heading from "../components/Heading.svelte"
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		grid-column-gap: 2em;
+		padding: 1em;
 	}
 
 	.content section#start .title {
@@ -409,6 +403,7 @@ import Heading from "../components/Heading.svelte"
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		grid-column-gap: 2em;
+		padding: 1em;
 	}
 
 	.content section#start .section-content > div {
@@ -441,6 +436,10 @@ import Heading from "../components/Heading.svelte"
 		color: inherit;
 	}
 
+	.content section#questions .section-content {
+		padding: 1em;
+	}
+
 	.content section#questions details {
 		border-top: 2px solid black;
 		padding: 1em;
@@ -451,6 +450,8 @@ import Heading from "../components/Heading.svelte"
 	}
 
 	.content section#questions details summary {
+		display: flex;
+		justify-content: space-between;
 		outline: none;
 		cursor: pointer;
 		user-select: none;
@@ -468,8 +469,10 @@ import Heading from "../components/Heading.svelte"
 		content: "⌃";
 		transform: rotate(180deg);
 		transition: transform .1s ease-in-out;
-		float: right;
 		font-weight: 700;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
 	}
 
 	.content section#questions details[open] summary::after {
@@ -478,27 +481,5 @@ import Heading from "../components/Heading.svelte"
 	}
 
 
-	.footing {
-		background-color: rgba(var(--color-purple), 0.2);
-		padding: 2.5vh;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
 
-	.footing .footing-heading {
-		text-align: center;
-		margin-bottom: 2em;
-	}
-
-	.footing .footing-heading a {
-		color: inherit;
-		border-bottom: 2px solid black;
-		text-decoration: none;
-	}
-
-	.footing .footing-content img {
-		height: 2em;
-	}
 </style>
