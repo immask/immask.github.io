@@ -89,7 +89,8 @@
 		.heading {
 			position: fixed;
 			background-color: white;
-			padding: 1em;
+      padding: 1em;
+      margin: 0;
 		}
 
 		.header {

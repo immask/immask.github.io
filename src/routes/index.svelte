@@ -8,7 +8,8 @@ import Heading from "../components/Heading.svelte"
 			<div class="section-content">
 			<div>
 				<div>
-					<h1>Your face is unique.<br>Your mask should be too.</h1>
+					<h1>Your face is unique.</h1>
+					<h1>Your mask could be too.</h1>
 					<p>Our web application uses facial dimension inputs to help you generate a mask that fits your face.</p>
 				</div>
 				<div>
@@ -196,8 +197,6 @@ import Heading from "../components/Heading.svelte"
 	.content {
 		width: 100%;
 		margin: auto;
-		padding: 1em;
-		box-sizing: border-box;
 	}
 
 	.content section {
@@ -214,6 +213,8 @@ import Heading from "../components/Heading.svelte"
 
 	.content section .section-content {
 		width: 100%;
+		box-sizing: border-box;
+		padding: 1em;
 	}
 
 	.content section .section-content button {
@@ -231,12 +232,12 @@ import Heading from "../components/Heading.svelte"
 
 	.content section#splash {
 		position: relative;
+		height: 100vh;
 	}
 
 	.content section#splash .section-content {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));;
-		grid-template-rows: 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));;
 		grid-column-gap: 2em;
 		height: 100%;
 	}
@@ -244,6 +245,7 @@ import Heading from "../components/Heading.svelte"
 	.content section#splash h1 {
 		font-size: 2.2em;
 		margin: 0;
+		width: fit-content;
 	}
 
 	.content section#splash p  {
@@ -252,8 +254,7 @@ import Heading from "../components/Heading.svelte"
 	}
 
 	.content section#splash button {
-		margin-top: 0.5em;
-		margin-right: 1em;
+		margin: 0.5em 0.5em 0 0;
 	}
 
 	.content section#splash button a {
@@ -265,7 +266,6 @@ import Heading from "../components/Heading.svelte"
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		max-width: 70vh;
 		height: 90vh;
 	}
 
@@ -279,8 +279,38 @@ import Heading from "../components/Heading.svelte"
 		color: black;
 	}
 
+
+
 	.content section#splash .section-content img {
 		height: 80vh;
+	}
+
+
+	@media only screen and (max-width: 832px) {
+		.content section#splash {
+			height: fit-content;
+		}
+		.content section#splash .section-content {
+			position: relative;
+		}
+		.content section#splash .section-content > div {
+			padding: 1em;
+			box-sizing: border-box;
+		}
+		.content section#splash .section-content > div:nth-of-type(1) {
+			width: 90vw;
+			margin: auto;
+			height: fit-content;
+			display: flex;
+			grid-row: 2;
+		}
+		.content section#splash .section-content > div:nth-of-type(2) {
+			height: 60vh;
+			grid-row: 1;
+		}
+		.content section#splash h1 {
+			font-size: 1.8em;
+		}
 	}
 
 	.content section .section-heading {
@@ -302,6 +332,7 @@ import Heading from "../components/Heading.svelte"
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));;
 		grid-column-gap: 2em;
 		text-align: center;
+		padding: 1em;
 	}
 
 	.content section#intro .section-content p {
@@ -449,7 +480,7 @@ import Heading from "../components/Heading.svelte"
 
 	.footing {
 		background-color: rgba(var(--color-purple), 0.2);
-		padding: 5vh;
+		padding: 2.5vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
