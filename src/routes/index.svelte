@@ -32,7 +32,7 @@ import Footing from "../components/Footing.svelte"
 				<div>
 					<div class="card-image">
 						<h1>1</h1>
-						<p>📐</p>
+						<img src="/assets/process1.svg" alt="measure">
 					</div>
 					<div>
 						<h1>Take Measurements</h1>
@@ -42,7 +42,7 @@ import Footing from "../components/Footing.svelte"
 				<div>
 					<div class="card-image">
 						<h1>2</h1>
-						<p>🖨️</p>
+						<img src="/assets/process2.svg" alt="print">
 					</div>
 					<div>
 						<h1>Print Your Design</h1>
@@ -52,7 +52,7 @@ import Footing from "../components/Footing.svelte"
 				<div>
 					<div class="card-image">
 						<h1>3</h1>
-						<p>🧵</p>
+						<img src="/assets/process3.svg" alt="design">
 					</div>
 					<div>
 						<h1>Sew your Design</h1>
@@ -79,7 +79,7 @@ import Footing from "../components/Footing.svelte"
 						these designs in their true size to trace or to laser-cut.</p>
 				</div>
 				<div>
-					<h3>Insert Image Here</h3>
+					<img src="/assets/masks.png" alt="masks">
 				</div>
 			</div>
 		</section>
@@ -353,11 +353,11 @@ import Footing from "../components/Footing.svelte"
 		left: 0;
 	}
 
-	.content section#intro .card-image p  {
-		font-size: 8em;
+	.content section#intro .card-image img  {
 		margin: 0;
-		height: 1.3em;
-		width: 1.3em;
+		padding: 1em;
+		height: 7em;
+		width: 7em;
 		border-radius: 10px;
 	}
 
@@ -365,7 +365,7 @@ import Footing from "../components/Footing.svelte"
 		color: rgba(var(--color-purple), 0.5);
 	}
 
-	.content section#intro .section-content > div:nth-of-type(1) .card-image p  {
+	.content section#intro .section-content > div:nth-of-type(1) .card-image img {
 		background-color: rgba(var(--color-purple), 0.5);
 	}
 
@@ -373,7 +373,7 @@ import Footing from "../components/Footing.svelte"
 		color: rgba(var(--color-pink), 0.5);
 	}
 
-	.content section#intro .section-content > div:nth-of-type(2) .card-image p  {
+	.content section#intro .section-content > div:nth-of-type(2) .card-image img {
 		background-color: rgba(var(--color-pink), 0.5);
 	}
 
@@ -381,7 +381,7 @@ import Footing from "../components/Footing.svelte"
 		color: rgba(var(--color-green), 0.90);
 	}
 
-	.content section#intro .section-content > div:nth-of-type(3) .card-image p  {
+	.content section#intro .section-content > div:nth-of-type(3) .card-image img {
 		background-color: rgba(var(--color-green), 0.50);
 	}
 
@@ -393,6 +393,11 @@ import Footing from "../components/Footing.svelte"
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		grid-column-gap: 2em;
 		padding: 1em;
+	}
+
+	.content section#about .section-content img {
+		width: 100%;
+		border-radius: 10px;
 	}
 
 	.content section#start .title {
@@ -478,6 +483,28 @@ import Footing from "../components/Footing.svelte"
 	.content section#questions details[open] summary::after {
 		content: "⌃";
 		transform: rotate(000deg);
+	}
+
+	@keyframes fadeIn {
+		0% {
+			font-size: 0.5em;
+			opacity: 0.3;
+		}
+		100% {
+			font-size: 1em;
+			opacity: 0.8;
+		}
+	}
+
+	.content section#questions details summary ~ * {
+		animation-name: fadeIn;
+		animation-duration: 200ms;
+		animation-delay: 0ms;
+		animation-timing-function: ease-in-out;
+	}
+
+	.content section#questions details[open] summary ~ * {
+
 	}
 
 
