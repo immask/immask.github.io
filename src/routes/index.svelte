@@ -1,13 +1,8 @@
+<script>
+import Heading from "../components/Heading.svelte"
+</script>
 <main>
-	<div class="heading">
-		<div class="header"><a href="/"><img src="/assets/immask.svg" alt="immask"></a></div>
-		<div class="navbar">
-			<div class="navbar-link"><a href="#intro">How It Works</a></div>
-			<div class="navbar-link"><a href="#about">About Us</a></div>
-			<div class="navbar-link"><a href="#start">Get Started</a></div>
-			<div class="navbar-link"><a href="https://github.com/immask">Github</a></div>
-		</div>
-	</div>
+	<Heading/>
 	<div class="content">
 		<section id="splash">
 			<div class="section-content">
@@ -175,10 +170,6 @@
 	</div>
 </main>
 
-<script>
-import Section from '../components/Section.svelte';
-</script>
-
 <style>
 	@import url('https://rsms.me/inter/inter.css');
 
@@ -200,64 +191,7 @@ import Section from '../components/Section.svelte';
 		animation: fadeIn .2s ease-in-out;
 	}
 
-	.heading {
-		position: absolute;
-		right: 0;
-		left: 0;
-		width: 100vw;
-		max-width: 1200px;
-		box-sizing: border-box;
-		padding: 2em 1em;
-		margin: auto;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		z-index: 1;
-	}
 
-	.header {
-		width: fit-content;
-		letter-spacing: -0.05em;
-		user-select: none;
-		cursor: pointer;
-		padding-right: 2em;
-		color: rgb(90, 96, 152);
-		z-index: 1;
-	}
-
-	.header a {
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.header img {
-		height: 2em;
-	}
-	
-	.navbar {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		font-size: 1em;
-		z-index: 1;
-	}
-
-	.navbar .navbar-link {
-		padding: 0.5em 1em; 
-		vertical-align: middle;
-	}
-
-	.navbar .navbar-link a {
-		color: rgb(185, 185, 185);
-		font-weight: 500;
-		text-decoration: none;
-		transition: color .1s ease-in-out;
-	}
-
-	.navbar .navbar-link a:hover {
-		border-bottom: 3px solid rgb(var(--color-pink));
-		color: rgb(var(--color-pink));
-	}
 
 	.content {
 		width: 100%;
@@ -432,7 +366,7 @@ import Section from '../components/Section.svelte';
 
 	.content section#about .section-content {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		grid-column-gap: 2em;
 	}
 
@@ -442,7 +376,7 @@ import Section from '../components/Section.svelte';
 
 	.content section#start .section-content {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		grid-column-gap: 2em;
 	}
 

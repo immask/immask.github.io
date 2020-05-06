@@ -16,8 +16,9 @@ html {
 }
 
 body {
-  position: relative;
-  height: auto;
+  position: absolute;
+	height: auto;
+	width: 100vw;
   min-height: 100% !important;		
   margin:  0em;
   padding: 0em;
