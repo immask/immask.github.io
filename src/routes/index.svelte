@@ -151,13 +151,7 @@ import Footing from "../components/Footing.svelte"
 				<details>
 					<summary>How often should I wash my DIY mask?</summary>
 					<p>Masks should be washed after every use.</p>
-				</details>	
-				<details>
-					<summary>Is there a preset template that I can use?</summary>
-					<p>Yes, the default settings are taken from a headform of an “average” person, but note 
-					that since seal is particularly sensitive to facial dimensions, this mask might not fit 
-					the person that you are designing for.</p>
-				</details>			
+				</details>		
 			</div>
 		</section>
 	</div>
